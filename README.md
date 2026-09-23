@@ -1,0 +1,2 @@
+# NOVUSFX
+Trading software 
