@@ -134,3 +134,80 @@ chatForm.addEventListener('submit', (e) => {
     addBubble(getReply(message), 'assistant');
   }, 700 + Math.random() * 500);
 });
+
+
+/* ---- Card image sliders ----
+   Each .card-slider holds an image per slide. To use your own photos,
+   replace the src paths in index.html (or drop files into /images with
+   the same names). Add or remove <img> tags freely; dots build themselves. */
+document.querySelectorAll('.card-slider').forEach((slider, sliderIndex) => {
+  const track = slider.querySelector('.slides');
+  const slides = track.children;
+  const dotsWrap = slider.querySelector('.slider-dots');
+  const count = slides.length;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let index = 0, timer = null, startX = 0, dx = 0, dragging = false, visible = false;
+
+  if (count < 2) {
+    slider.querySelectorAll('.slider-btn, .slider-dots').forEach(el => el.remove());
+    return;
+  }
+
+  const dots = Array.from(slides).map((_, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', `Show image ${i + 1}`);
+    b.addEventListener('click', e => { e.stopPropagation(); goTo(i); restart(); });
+    dotsWrap.appendChild(b);
+    return b;
+  });
+
+  function goTo(i) {
+    index = (i + count) % count;
+    track.style.transform = `translateX(${-index * 100}%)`;
+    dots.forEach((d, n) => d.classList.toggle('active', n === index));
+  }
+  function start() {
+    if (reduceMotion || timer || !visible) return;
+    timer = setInterval(() => goTo(index + 1), 4200 + sliderIndex * 350); // staggered so cards don't flip together
+  }
+  function stop() { clearInterval(timer); timer = null; }
+  function restart() { stop(); start(); }
+
+  slider.querySelector('.prev').addEventListener('click', e => { e.stopPropagation(); goTo(index - 1); restart(); });
+  slider.querySelector('.next').addEventListener('click', e => { e.stopPropagation(); goTo(index + 1); restart(); });
+
+  // Swipe / drag
+  slider.addEventListener('pointerdown', e => {
+    if (e.target.closest('button')) return;
+    dragging = true; startX = e.clientX; dx = 0;
+    track.classList.add('dragging'); stop();
+  });
+  slider.addEventListener('pointermove', e => {
+    if (!dragging) return;
+    dx = e.clientX - startX;
+    track.style.transform = `translateX(calc(${-index * 100}% + ${dx}px))`;
+  });
+  const endDrag = () => {
+    if (!dragging) return;
+    dragging = false;
+    track.classList.remove('dragging');
+    if (Math.abs(dx) > slider.offsetWidth * 0.15) goTo(index + (dx < 0 ? 1 : -1)); else goTo(index);
+    start();
+  };
+  slider.addEventListener('pointerup', endDrag);
+  slider.addEventListener('pointercancel', endDrag);
+  slider.addEventListener('pointerleave', endDrag);
+
+  // Pause on hover/focus, and only run while on screen
+  slider.addEventListener('mouseenter', stop);
+  slider.addEventListener('mouseleave', start);
+  slider.addEventListener('focusin', stop);
+  slider.addEventListener('focusout', start);
+  new IntersectionObserver(([entry]) => {
+    visible = entry.isIntersecting;
+    visible ? start() : stop();
+  }, { threshold: 0.3 }).observe(slider);
+
+  goTo(0);
+});
