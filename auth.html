@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log In or Open an Account | NovusFX Markets</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+<main class="auth-shell">
+  <a href="index.html" class="logo auth-logo"><i class="fa-solid fa-chart-line logo-icon"></i><strong>Novus</strong><em>FX</em></a>
+
+  <div class="auth-card">
+    <div id="configBanner" class="auth-alert error" hidden>Firebase isn't configured yet. Add your project keys to <code>firebase-config.js</code>.</div>
+    <div id="msg" class="auth-alert" role="alert" hidden></div>
+
+    <!-- LOGIN / SIGN UP -->
+    <section data-panel="login">
+      <div class="auth-tabs" role="tablist">
+        <button type="button" role="tab" data-tab="login" class="active">Log In</button>
+        <button type="button" role="tab" data-tab="signup">Open Account</button>
+      </div>
+      <form id="loginForm" novalidate>
+        <label for="loginEmail">Email</label>
+        <input id="loginEmail" type="email" autocomplete="email" required>
+        <label for="loginPassword">Password</label>
+        <div class="pw-wrap"><input id="loginPassword" type="password" autocomplete="current-password" required><button type="button" class="pw-toggle" aria-label="Show password"><i class="fa-regular fa-eye"></i></button></div>
+        <button type="button" class="auth-link" data-go="forgot">Forgot password?</button>
+        <button type="submit" class="btn btn-primary btn-full">Log In</button>
+      </form>
+    </section>
+
+    <section data-panel="signup" hidden>
+      <div class="auth-tabs" role="tablist">
+        <button type="button" role="tab" data-tab="login">Log In</button>
+        <button type="button" role="tab" data-tab="signup" class="active">Open Account</button>
+      </div>
+      <form id="signupForm" novalidate>
+        <label for="signupName">Full name</label>
+        <input id="signupName" type="text" autocomplete="name" required>
+        <label for="signupEmail">Email</label>
+        <input id="signupEmail" type="email" autocomplete="email" required>
+        <label for="signupPassword">Password</label>
+        <div class="pw-wrap"><input id="signupPassword" type="password" autocomplete="new-password" required minlength="10"><button type="button" class="pw-toggle" aria-label="Show password"><i class="fa-regular fa-eye"></i></button></div>
+        <p class="auth-hint">At least 10 characters, with letters and numbers.</p>
+        <label class="auth-check"><input id="signupTerms" type="checkbox"> <span>I'm 18 or over and accept the <a href="terms.html" target="_blank" rel="noopener">Terms</a>, <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and <a href="risk.html" target="_blank" rel="noopener">Risk Disclosure</a>.</span></label>
+        <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+      </form>
+    </section>
+
+    <!-- FORGOT -->
+    <section data-panel="forgot" hidden>
+      <h1 class="auth-title">Reset your password</h1>
+      <p class="auth-sub">Enter your email and we'll send you a reset link.</p>
+      <form id="forgotForm" novalidate>
+        <label for="forgotEmail">Email</label>
+        <input id="forgotEmail" type="email" autocomplete="email" required>
+        <button type="submit" class="btn btn-primary btn-full">Send Reset Link</button>
+        <button type="button" class="auth-link center" data-go="login">Back to log in</button>
+      </form>
+    </section>
+
+    <!-- VERIFY EMAIL -->
+    <section data-panel="verify" hidden>
+      <h1 class="auth-title">Verify your email</h1>
+      <p class="auth-sub">We sent a link to <b id="verifyEmail"></b>. Open it, then come back here. This page updates by itself.</p>
+      <button type="button" id="verifyCheck" class="btn btn-primary btn-full">I've verified my email</button>
+      <button type="button" id="verifyResend" class="auth-link center">Resend email</button>
+      <button type="button" class="auth-link center" data-signout>Use a different account</button>
+    </section>
+
+    <!-- 2FA ENROLL -->
+    <section data-panel="enroll" hidden>
+      <h1 class="auth-title">Set up two-factor authentication</h1>
+      <p class="auth-sub">Required to protect your funds.</p>
+      <ol class="auth-steps">
+        <li>Install an authenticator app (Google Authenticator, Microsoft Authenticator or Authy).</li>
+        <li>Scan this code, or type the key in by hand.</li>
+        <li>Enter the 6-digit code the app shows.</li>
+      </ol>
+      <div class="qr-box"><div id="qr"></div></div>
+      <p class="auth-key">Key: <code id="secretKey">&hellip;</code></p>
+      <form id="enrollForm" novalidate>
+        <label for="enrollCode">6-digit code</label>
+        <input id="enrollCode" class="code-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="6" autocomplete="one-time-code" required>
+        <button type="submit" class="btn btn-primary btn-full">Turn On 2FA</button>
+        <button type="button" class="auth-link center" data-signout>Cancel and sign out</button>
+      </form>
+    </section>
+
+    <!-- 2FA CHALLENGE -->
+    <section data-panel="challenge" hidden>
+      <h1 class="auth-title">Enter your 2FA code</h1>
+      <p class="auth-sub">Open your authenticator app and type the 6-digit code for NovusFX.</p>
+      <form id="challengeForm" novalidate>
+        <label for="challengeCode">6-digit code</label>
+        <input id="challengeCode" class="code-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="6" autocomplete="one-time-code" required>
+        <button type="submit" class="btn btn-primary btn-full">Verify</button>
+        <button type="button" class="auth-link center" data-go="login">Back to log in</button>
+      </form>
+      <p class="auth-hint center">Lost your phone? Contact support to reset 2FA.</p>
+    </section>
+  </div>
+
+  <p class="auth-foot">Trading involves risk. <a href="risk.html">Read the Risk Disclosure</a></p>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script type="module" src="auth.js"></script>
+</body>
+</html>
