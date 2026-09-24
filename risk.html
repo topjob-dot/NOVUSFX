@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NovusFX Markets | Trade Forex, Indices, Commodities &amp; Crypto</title>
+<meta name="description" content="NovusFX Markets — a multi-asset trading platform for forex, indices, commodities and crypto. Secure 2FA login, live market data, M-Pesa, Airtel Money and crypto funding.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#top" class="logo"><i class="fa-solid fa-chart-line logo-icon"></i><strong>Novus</strong><em>FX</em></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#markets">Markets</a>
+      <a href="#accounts">Accounts</a>
+      <a href="#deposits">Deposits</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#faq">FAQ</a>
+      <a href="auth.html" class="btn btn-ghost">Log In</a>
+      <a href="auth.html?tab=signup" class="btn btn-primary">Open Account</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <div class="hero-eyebrow"><span class="live-dot"></span> Live Markets &middot; 5,000+ Instruments</div>
+      <h1>Trade the world's markets with <span class="highlight">precision</span> and <span class="highlight">confidence</span></h1>
+      <p class="hero-sub">Forex, indices, commodities and crypto on one secure platform. Real-time pricing, 2FA-protected accounts, and instant funding through M-Pesa, Airtel Money or crypto.</p>
+      <div class="hero-actions">
+        <a href="auth.html?tab=signup" class="btn btn-primary btn-lg"><i class="fa-solid fa-rocket"></i> Open Free Account</a>
+        <a href="#markets" class="btn btn-ghost btn-lg"><i class="fa-solid fa-chart-simple"></i> Explore Markets</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><span>40+</span><small>Currency Pairs</small></div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><span>0.0</span><small>Spreads From (pips)</small></div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><span>24/5</span><small>Market Access</small></div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><span>2FA</span><small>Secured Accounts</small></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div>
+            <span class="chart-symbol">XAU/USD</span>
+            <span class="chart-price" id="chartPrice">2,417.85</span>
+          </div>
+          <span class="chart-change up" id="chartChange"><i class="fa-solid fa-arrow-trend-up"></i> +0.64%</span>
+        </div>
+        <svg class="chart-svg" viewBox="0 0 400 160" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#1E6FD9" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#1E6FD9" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path id="areaPath" d="M0,120 L400,120 L400,160 L0,160 Z" fill="url(#chartFill)"></path>
+          <path id="linePath" d="M0,120 L400,120" fill="none" stroke="#1E6FD9" stroke-width="2.5" stroke-linecap="round"></path>
+        </svg>
+        <div class="chart-tags">
+          <span class="chart-mini-tag"><i class="fa-solid fa-shield-halved"></i> 2FA Secured</span>
+          <span class="chart-mini-tag"><i class="fa-solid fa-bolt"></i> Instant Execution</span>
+        </div>
+      </div>
+      <div class="floating-tag tag-1"><i class="fa-solid fa-mobile-screen-button"></i> M-Pesa Deposit Confirmed</div>
+      <div class="floating-tag tag-2"><i class="fa-solid fa-lock"></i> Account Verified</div>
+    </div>
+  </div>
+
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#ffffff" d="M0,32 C360,80 1080,0 1440,48 L1440,80 L0,80 Z"></path></svg>
+  </div>
+</header>
+
+<div class="marquee-strip">
+  <div class="marquee-track" id="marqueeTrack">
+    <span>EUR/USD <b class="mq-up">1.0842 ▲</b></span>
+    <span>GBP/USD <b class="mq-down">1.2673 ▼</b></span>
+    <span>USD/JPY <b class="mq-up">156.21 ▲</b></span>
+    <span>XAU/USD <b class="mq-up">2,417.85 ▲</b></span>
+    <span>BTC/USD <b class="mq-up">67,240 ▲</b></span>
+    <span>ETH/USD <b class="mq-down">3,318 ▼</b></span>
+    <span>US30 <b class="mq-up">39,812 ▲</b></span>
+    <span>NAS100 <b class="mq-up">18,540 ▲</b></span>
+    <span>BRENT <b class="mq-down">83.12 ▼</b></span>
+    <span>USD/KES <b class="mq-up">129.40 ▲</b></span>
+  </div>
+</div>
+
+<section class="section" id="markets">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Markets</span>
+      <h2>Every asset class, <span class="highlight">one account</span></h2>
+      <p>Access thousands of instruments across five major markets with a single NovusFX login.</p>
+    </div>
+    <div class="categories-grid">
+      <div class="cat-card reveal" style="--c:#1E6FD9">
+      <div class="card-slider" aria-roledescription="carousel" aria-label="Forex images">
+        <div class="slides"><img src="images/forex-1.svg" alt="Forex image 1" loading="lazy" draggable="false"><img src="images/forex-2.svg" alt="Forex image 2" loading="lazy" draggable="false"><img src="images/forex-3.svg" alt="Forex image 3" loading="lazy" draggable="false"></div>
+        <button class="slider-btn prev" type="button" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="slider-btn next" type="button" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="slider-dots"></div>
+      </div>
+      <div class="cat-body">
+        <div class="cat-icon"><i class="fa-solid fa-coins"></i></div>
+        <h3>Forex</h3>
+        <p>Major, minor and exotic currency pairs with tight, transparent spreads.</p>
+        <span class="cat-count">40+ Pairs</span>
+      </div></div>
+      <div class="cat-card reveal" style="--c:#F5A623">
+      <div class="card-slider" aria-roledescription="carousel" aria-label="Crypto images">
+        <div class="slides"><img src="images/crypto-1.svg" alt="Crypto image 1" loading="lazy" draggable="false"><img src="images/crypto-2.svg" alt="Crypto image 2" loading="lazy" draggable="false"><img src="images/crypto-3.svg" alt="Crypto image 3" loading="lazy" draggable="false"></div>
+        <button class="slider-btn prev" type="button" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="slider-btn next" type="button" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="slider-dots"></div>
+      </div>
+      <div class="cat-body">
+        <div class="cat-icon"><i class="fa-solid fa-bitcoin-sign"></i></div>
+        <h3>Cryptocurrencies</h3>
+        <p>Trade BTC, ETH and other leading coins with round-the-clock pricing.</p>
+        <span class="cat-count">20+ Coins</span>
+      </div></div>
+      <div class="cat-card reveal" style="--c:#0A5CB8">
+      <div class="card-slider" aria-roledescription="carousel" aria-label="Indices images">
+        <div class="slides"><img src="images/indices-1.svg" alt="Indices image 1" loading="lazy" draggable="false"><img src="images/indices-2.svg" alt="Indices image 2" loading="lazy" draggable="false"><img src="images/indices-3.svg" alt="Indices image 3" loading="lazy" draggable="false"></div>
+        <button class="slider-btn prev" type="button" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="slider-btn next" type="button" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="slider-dots"></div>
+      </div>
+      <div class="cat-body">
+        <div class="cat-icon"><i class="fa-solid fa-chart-simple"></i></div>
+        <h3>Indices</h3>
+        <p>Trade the world's benchmark stock indices including US30 and NAS100.</p>
+        <span class="cat-count">15+ Indices</span>
+      </div></div>
+      <div class="cat-card reveal" style="--c:#5A7090">
+      <div class="card-slider" aria-roledescription="carousel" aria-label="Commodities images">
+        <div class="slides"><img src="images/commodities-1.svg" alt="Commodities image 1" loading="lazy" draggable="false"><img src="images/commodities-2.svg" alt="Commodities image 2" loading="lazy" draggable="false"><img src="images/commodities-3.svg" alt="Commodities image 3" loading="lazy" draggable="false"></div>
+        <button class="slider-btn prev" type="button" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="slider-btn next" type="button" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="slider-dots"></div>
+      </div>
+      <div class="cat-body">
+        <div class="cat-icon"><i class="fa-solid fa-oil-well"></i></div>
+        <h3>Commodities</h3>
+        <p>Gold, silver, oil and natural gas with reliable, live pricing feeds.</p>
+        <span class="cat-count">10+ Markets</span>
+      </div></div>
+      <div class="cat-card reveal" style="--c:#1E6FD9">
+      <div class="card-slider" aria-roledescription="carousel" aria-label="Stocks images">
+        <div class="slides"><img src="images/stocks-1.svg" alt="Stocks image 1" loading="lazy" draggable="false"><img src="images/stocks-2.svg" alt="Stocks image 2" loading="lazy" draggable="false"><img src="images/stocks-3.svg" alt="Stocks image 3" loading="lazy" draggable="false"></div>
+        <button class="slider-btn prev" type="button" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="slider-btn next" type="button" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="slider-dots"></div>
+      </div>
+      <div class="cat-body">
+        <div class="cat-icon"><i class="fa-solid fa-building-columns"></i></div>
+        <h3>Stocks</h3>
+        <p>Fractional exposure to leading global equities and blue-chip shares.</p>
+        <span class="cat-count">50+ Shares</span>
+      </div></div>
+      <div class="cat-card reveal" style="--c:#F5A623">
+      <div class="card-slider" aria-roledescription="carousel" aria-label="Support images">
+        <div class="slides"><img src="images/support-1.svg" alt="Support image 1" loading="lazy" draggable="false"><img src="images/support-2.svg" alt="Support image 2" loading="lazy" draggable="false"><img src="images/support-3.svg" alt="Support image 3" loading="lazy" draggable="false"></div>
+        <button class="slider-btn prev" type="button" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="slider-btn next" type="button" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="slider-dots"></div>
+      </div>
+      <div class="cat-body">
+        <div class="cat-icon"><i class="fa-solid fa-headset"></i></div>
+        <h3>24/7 Support</h3>
+        <p>Live chat and a dedicated support desk whenever you need help.</p>
+        <span class="cat-count">Always On</span>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt-bg">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Why NovusFX</span>
+      <h2>Built for <span class="highlight">serious traders</span></h2>
+      <p>Every feature is designed around speed, transparency and account security.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>Two-Factor Authentication</h3>
+        <p>Every login is protected by mandatory 2FA, keeping your dashboard and funds secure.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+        <h3>Fast Order Execution</h3>
+        <p>Orders route through our engine with minimal latency and no requotes.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>Live Market Data</h3>
+        <p>Real-time quotes, charts and account history, all in one dashboard.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa-solid fa-wallet"></i></div>
+        <h3>Local Payment Rails</h3>
+        <p>Fund your account instantly with M-Pesa, Airtel Money, or crypto.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa-solid fa-comments"></i></div>
+        <h3>AI Support Assistant</h3>
+        <p>Get instant answers on deposits, accounts and platform features, day or night.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa-solid fa-table-columns"></i></div>
+        <h3>Full Trade Transparency</h3>
+        <p>Every order, deposit and balance change is logged and visible on your dashboard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="accounts">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Account Types</span>
+      <h2>Choose the account that <span class="highlight">fits your strategy</span></h2>
+      <p>Transparent pricing across every tier, with no hidden fees.</p>
+    </div>
+    <div class="plans-grid">
+      <div class="plan-card reveal">
+        <h3>Starter</h3>
+        <div class="plan-price">$50<span>min. deposit</span></div>
+        <ul class="plan-list">
+          <li><i class="fa-solid fa-check"></i> Spreads from 1.2 pips</li>
+          <li><i class="fa-solid fa-check"></i> Standard execution</li>
+          <li><i class="fa-solid fa-check"></i> 2FA-secured login</li>
+          <li><i class="fa-solid fa-check"></i> Email &amp; chat support</li>
+        </ul>
+        <a href="auth.html?tab=signup" class="btn btn-outline btn-full">Get Started</a>
+      </div>
+      <div class="plan-card featured reveal">
+        <span class="plan-tag">Most Popular</span>
+        <h3>Pro</h3>
+        <div class="plan-price">$500<span>min. deposit</span></div>
+        <ul class="plan-list">
+          <li><i class="fa-solid fa-check"></i> Spreads from 0.4 pips</li>
+          <li><i class="fa-solid fa-check"></i> Priority execution</li>
+          <li><i class="fa-solid fa-check"></i> 2FA-secured login</li>
+          <li><i class="fa-solid fa-check"></i> Priority live chat support</li>
+          <li><i class="fa-solid fa-check"></i> Dedicated account overview</li>
+        </ul>
+        <a href="auth.html?tab=signup" class="btn btn-primary btn-full">Get Started</a>
+      </div>
+      <div class="plan-card reveal">
+        <h3>VIP</h3>
+        <div class="plan-price">$5,000<span>min. deposit</span></div>
+        <ul class="plan-list">
+          <li><i class="fa-solid fa-check"></i> Spreads from 0.0 pips</li>
+          <li><i class="fa-solid fa-check"></i> Fastest execution tier</li>
+          <li><i class="fa-solid fa-check"></i> 2FA-secured login</li>
+          <li><i class="fa-solid fa-check"></i> Dedicated relationship manager</li>
+          <li><i class="fa-solid fa-check"></i> Priority withdrawal processing</li>
+        </ul>
+        <a href="auth.html?tab=signup" class="btn btn-outline btn-full">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt-bg" id="deposits">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Deposits &amp; Withdrawals</span>
+      <h2>Fund your account <span class="highlight">in seconds</span></h2>
+      <p>Choose the method that works for you. Deposits are added to your available balance instantly after confirmation.</p>
+    </div>
+    <div class="deposit-grid">
+      <div class="deposit-card reveal">
+        <div class="deposit-icon mpesa"><i class="fa-solid fa-mobile-screen-button"></i></div>
+        <h3>M-Pesa</h3>
+        <p>Enter your phone number on the dashboard, approve the STK push prompt, and your balance updates automatically.</p>
+        <span class="deposit-tag">Instant</span>
+      </div>
+      <div class="deposit-card reveal">
+        <div class="deposit-icon airtel"><i class="fa-solid fa-sim-card"></i></div>
+        <h3>Airtel Money</h3>
+        <p>Confirm the payment prompt sent to your Airtel line to fund your account in moments.</p>
+        <span class="deposit-tag">Instant</span>
+      </div>
+      <div class="deposit-card reveal">
+        <div class="deposit-icon crypto"><i class="fa-solid fa-bitcoin-sign"></i></div>
+        <h3>Crypto (USDT)</h3>
+        <p>Send USDT to your unique deposit address and your balance credits after network confirmation.</p>
+        <span class="deposit-tag">~2-10 min</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Get Started</span>
+      <h2>Open your account in <span class="highlight">four steps</span></h2>
+    </div>
+    <div class="steps-track">
+      <div class="step-card reveal">
+        <div class="step-num">01</div>
+        <div class="step-icon"><i class="fa-solid fa-user-plus"></i></div>
+        <h3>Create Account</h3>
+        <p>Sign up with your email and phone number in under a minute.</p>
+      </div>
+      <i class="fa-solid fa-arrow-right step-arrow"></i>
+      <div class="step-card reveal">
+        <div class="step-num">02</div>
+        <div class="step-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>Secure with 2FA</h3>
+        <p>Set up two-factor authentication to protect your dashboard.</p>
+      </div>
+      <i class="fa-solid fa-arrow-right step-arrow"></i>
+      <div class="step-card reveal">
+        <div class="step-num">03</div>
+        <div class="step-icon"><i class="fa-solid fa-wallet"></i></div>
+        <h3>Fund Your Account</h3>
+        <p>Deposit via M-Pesa, Airtel Money or crypto, instantly reflected on your balance.</p>
+      </div>
+      <i class="fa-solid fa-arrow-right step-arrow"></i>
+      <div class="step-card reveal">
+        <div class="step-num">04</div>
+        <div class="step-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>Start Trading</h3>
+        <p>Access live markets and place your first order from the dashboard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt-bg">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Traders Say</span>
+      <h2>Trusted by traders <span class="highlight">across Kenya</span></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card reveal">
+        <div class="testi-quote">&rdquo;</div>
+        <p>Funding my account with M-Pesa took less than a minute. The dashboard shows every trade clearly.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#1E6FD9">DK</div>
+          <div><strong>David K.</strong><span>Nairobi</span></div>
+        </div>
+      </div>
+      <div class="testi-card featured reveal">
+        <div class="testi-quote">&rdquo;</div>
+        <p>The 2FA setup gave me real confidence logging in from my phone. Execution has been smooth.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#F5A623">AM</div>
+          <div><strong>Amina M.</strong><span>Mombasa</span></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-quote">&rdquo;</div>
+        <p>Support answered my question about crypto deposits within seconds through the chat widget.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#0A5CB8">JO</div>
+          <div><strong>James O.</strong><span>Kisumu</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">FAQ</span>
+      <h2>Common <span class="highlight">questions</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q">How do I deposit with M-Pesa or Airtel Money? <i class="fa-solid fa-chevron-down"></i></button>
+        <div class="faq-a"><p>From your dashboard, choose Deposit, select M-Pesa or Airtel Money, enter your phone number and amount, then approve the prompt sent to your phone. Your balance updates automatically once confirmed.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Is two-factor authentication required? <i class="fa-solid fa-chevron-down"></i></button>
+        <div class="faq-a"><p>Yes. Every account must enable 2FA before trading is unlocked, adding an extra layer of protection beyond your password.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Which crypto assets can I deposit with? <i class="fa-solid fa-chevron-down"></i></button>
+        <div class="faq-a"><p>USDT deposits are supported. You'll receive a unique wallet address on your dashboard, and your balance credits once the network confirms the transaction.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Can I see every trade and data point on my account? <i class="fa-solid fa-chevron-down"></i></button>
+        <div class="faq-a"><p>Yes. Your dashboard shows live balance, open positions, order history, and every deposit and withdrawal in full detail.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Is NovusFX licensed? <i class="fa-solid fa-chevron-down"></i></button>
+        <div class="faq-a"><p>NovusFX's regulatory license application is currently in progress. Full licensing details will be published here once approved.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-inner reveal">
+    <h2>Ready to start trading?</h2>
+    <p>Open your NovusFX account today and get access to live markets in minutes.</p>
+    <a href="auth.html?tab=signup" class="btn btn-primary btn-lg">Open Free Account</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="#top" class="logo light"><i class="fa-solid fa-chart-line logo-icon"></i><strong>Novus</strong><em>FX</em></a>
+      <p>A multi-asset trading platform for forex, indices, commodities and crypto, with secure 2FA-protected accounts and local payment rails.</p>
+      <div class="footer-badges">
+        <span><i class="fa-solid fa-shield-halved"></i> 2FA Secured</span>
+        <span><i class="fa-solid fa-clock"></i> License Application In Progress</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="#markets">Markets</a></li>
+        <li><a href="#accounts">Accounts</a></li>
+        <li><a href="#deposits">Deposits</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="risk.html">Risk Disclosure</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <span>&copy; 2026 NovusFX Markets. Trading involves risk. Regulatory license application in progress.</span>
+      <div class="footer-legal"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="risk.html">Risk</a></div>
+    </div>
+  </div>
+</footer>
+
+<button class="chat-toggle-btn" id="chatToggle" aria-label="Open chat"><i class="fa-solid fa-comment-dots"></i></button>
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-panel-header">
+    <div><strong>NovusFX Assistant</strong><span class="chat-status"><i class="fa-solid fa-circle"></i> Online</span></div>
+    <button id="chatClose" aria-label="Close chat"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-bubble assistant">Hi, I'm the NovusFX assistant. Ask me about deposits, 2FA, accounts or spreads.</div>
+  </div>
+  <form class="chat-input-row" id="chatForm">
+    <input type="text" id="chatInput" placeholder="Type your question..." autocomplete="off">
+    <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+  </form>
+</div>
+
+<button class="back-top" id="backTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script src="script.js"></script>
+</body>
+</html>
